@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+  <style>
+    body{
+      background-image: url("https://www.healio.com/~/media/slack-news/stock-images/fm_im/p/pills_shutterstock.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  .result{
+    background-color: green;
+    color:#fff;
+    padding:20px;
+  }
+  .row{
+    display:flex;
+  }
+  #reader{
+    position: absolute;
+    top: 3em;
+    left: 19em;
+    background-color: green;
+  }
+  #col2{
+    position: absolute;
+    top: 31em;
+    left: 20em;
+  }
+   #qr{
+            outline: none;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            background-color: #006666;
+            /* padding: 5px; */
+            position: absolute;
+            padding-top: 12px;
+            bottom: 15px;
+            right: 20px;
+            width: 11rem;
+            height: 2em;
+            text-align: center;
+        }
+       #qr:hover{
+            outline: none;
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            background-color: #fff;
+            box-shadow: 5px 5px 5px #cc0000;
+            /* padding: 5px; */
+            position: absolute;
+            padding-top: 12px;
+            bottom: 15px;
+            right: 20px;
+            width: 11rem;
+            height: 2em;
+            text-align: center;
+        }
+</style>
+</head>
+<body>
+<script src="html5-qrcode.min.js"></script>
+
+
+
+<div class="row">
+  <div class="col">
+    <div style="width:500px;" id="reader"></div>
+  </div>
+  <div class="col" style="padding:30px;" id="col2">
+    <h4>SCAN RESULT</h4>
+    <div id="result">Result Here</div>
+  </div>
+</div>
+
+<a href="hindiwait.html" id="qr">Next</a>
+<script type="text/javascript">
+function onScanSuccess(qrCodeMessage) {
+    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+}
+
+function onScanError(errorMessage) {
+  //handle scan error
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+</script>
+
+</body>
+</html>

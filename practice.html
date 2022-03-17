@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function passvalues(){
+            var word=document.getElementById('se').value;
+                    var wordfor=document.getElementById('me').value;
+                    var wordforthem=document.getElementById('qe').value;
+                    localStorage.setItem("textvalues",word);
+                    localStorage.setItem("textmedicine",wordfor);
+                    localStorage.setItem("textquantity",wordforthem);
+                    document.user_form.action = "practice2.html";
+                    return false;
+                   
+        }
+//         function mybtn(){
+//             const para = document.createElement("p");
+// const node = document.createTextNode("This is new.");
+// para.appendChild(node);
+     
+//         }
+    </script>
+</head>
+<body>
+    <form name="user_form">
+    <input type="text" id="se" placeholder="serial number" required>
+    <input type="text" id="me" placeholder="medicine name" required>
+    <input type="text" id="qe" placeholder="Quantity" required>
+    <input type="submit" value="Click" onclick="passvalues()"/>
+    <!-- <input type="button" id="btn" onclick="mybtn()" value="+"/> -->
+</form>
+</body>
+</html>
+<!-- <html>
+    <head>
+
+    </head>
+    <body>
+        
+    </body>
+</html>
+<h1>We are all good . </h1>
+<script src="html5-qrcode.min.js"></script>
+<style>
+  .result{
+    background-color: green;
+    color:#fff;
+    padding:20px;
+  }
+  .row{
+    display:flex;
+  }
+</style>
+
+
+<div class="row">
+  <div class="col">
+    <div style="width:500px;" id="reader"></div>
+  </div>
+  <div class="col" style="padding:30px;">
+    <h4>SCAN RESULT</h4>
+    <div id="result">Result Here</div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+function onScanSuccess(qrCodeMessage) {
+    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+}
+
+function onScanError(errorMessage) { -->
+
+<!-- }
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess, onScanError);
+
+</script> -->

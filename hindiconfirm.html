@@ -1,0 +1,224 @@
+<html>
+    
+    <head>
+        <title></title>
+        <!-- <link  rel="stylesheet" href="welc.css" > -->
+        <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/f88d2fa247.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+          <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+        
+    </head>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            background-image: url("https://www.msm.edu/online/makingmedicines/images/makingmedicines784.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+        }
+        h1{
+            position: absolute;
+            font-size: 8rem;
+            font-weight: 600;
+            top: 6%;
+            color: #000;
+            left: 8%;
+            text-align: center;
+        }
+        #prescrippage a{
+            outline: none;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            background-color: #006666;
+            /* padding: 5px; */
+            position: absolute;
+            padding-top: 12px;
+            bottom: 15px;
+            right: 20px;
+            width: 15rem;
+            height: 3em;
+            text-align: center;
+        }
+        #prescrippage a:hover{
+            outline: none;
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            border-radius: 30px;
+            border: 2px solid #fff;
+            background-color: #fff;
+            box-shadow: 5px 5px 5px #cc0000;
+            /* padding: 5px; */
+            position: absolute;
+            padding-top: 12px;
+            bottom: 15px;
+            right: 20px;
+            width: 15rem;
+            height: 3em;
+            text-align: center;
+        }
+        #table1{
+            color: #000;
+            font-size: 25px;
+            font-weight: 600;
+            position: absolute;
+            border: 2px solid black;
+            top: 25%;
+            left: 13%;
+        }
+       td{
+           padding: 20px;
+           border: 2px solid black;
+       }
+       th{
+           padding: 10px;
+           border: 2px solid black;
+       }
+       #bottombtn{
+           display: flex;
+           position: absolute;
+           bottom: 2rem;
+           right: 90rem;
+           padding: 10px;
+       }
+       #bottombtn h4{
+           position: relative;
+           font-weight: 700;
+          margin-right: 12px;
+       }
+       #bottombtn input{
+           position: relative;
+          outline: none;
+          border: none;
+          font-size: 20px;   
+        }
+        table{
+            background-color: rgb(255, 255,255,0.6);
+        }
+        #total{
+            position: absolute;
+            bottom: 0em;
+            border: none;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            left: 9.5em;
+        }
+        #result{
+            position: absolute;
+            bottom: -13px;
+            width: 4em;
+            text-align: center;
+            height: 2em;
+            left: 10.2em;
+            background-color: #fff;
+            outline: none;
+          border: none;
+          font-size: 20px;
+        }
+    </style>
+    <body>
+        <div id="prescrippage">
+    <h1>*दवाई का पर्चा सुनिश्चित करे</h1>
+     <table id="table1">
+         <tr>
+            <th>S.No.</th>
+            <th>Medicine</th>
+            <th>Dose</th>
+            <th id="qt">Quantity</th>
+            <th>MRP(₹)</th>
+         </tr>
+         <tr>
+            <td>1</td>
+            <td>Paracetamol</td>
+            <td>2 Times</td>
+            <td >2</td>
+            <td id="q1">110</td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td>Flexon</td>
+            <td>1 Times</td>
+            <td >1</td>
+            <td id="q2">18</td>
+         </tr>
+         <tr>
+            <td>3</td>
+            <td>Nogacid</td>
+            <td>2 Times</td>
+            <td >2</td>
+            <td id="q3">24</td>
+         </tr>
+         <tr>
+            <td>4</td>
+            <td>Flexon</td>
+            <td>2 Times</td>
+            <td>2</td>
+            <td id="q4">40</td>
+         </tr>
+         <tr>
+            <td>5</td>
+            <td>Strepsils</td>
+            <td>2 Times</td>
+            <td>2</td>
+            <td id="q5">150</td>
+         </tr>
+         <tr style="color: #cc0000;">
+            <td>6</td>
+            <td>Benzip</td>
+            <td>2 Times</td>
+            <td>-</td>
+            <td>-</td>
+         </tr>
+     </table>
+    <a href="hindipay.html">Next</a>
+    <div id="bottombtn">
+    <button class="btn btn-success" onclick="myman()" id="total">संपूर्ण:₹</button>
+    <input type="text" id="result" disabled>
+    <!-- <input type="varchar" onkeypress="coninput(event)"> -->
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        // function coninput(evt){
+        //     var ch=String.fromCharCode(evt.which);
+        //     if(!(/[0-9]/.test(ch))){
+        //         evt.preventDefault();
+        //     }
+        // }
+        function myman(){
+            var qe=document.getElementById('qt').innerText;
+            let s1=parseInt(document.getElementById('q1').innerText);
+            let s2=parseInt(document.getElementById('q2').innerText);
+            let s3=parseInt(document.getElementById('q3').innerText);
+            let s4=parseInt(document.getElementById('q4').innerText);
+            let s5=parseInt(document.getElementById('q5').innerText);
+            console.log(qe);
+            var sum=eval("s1+s2+s3+s4+s5");
+            // console.log(sum);
+            document.getElementById('result').value=sum;
+        }
+    </script>
+    </body>
+</html>

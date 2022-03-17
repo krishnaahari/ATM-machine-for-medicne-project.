@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Serial</th>
+            <th>Medicine</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td id="result"></td>
+            <td id="result1"></td>
+            <td id="result2"></td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        document.getElementById('result').innerHTML=localStorage.getItem("textvalues");
+        document.getElementById('result1').innerHTML=localStorage.getItem("textmedicine");
+        document.getElementById('result2').innerHTML=localStorage.getItem("textquantity");
+    </script>
+</body>
+</html>
+
